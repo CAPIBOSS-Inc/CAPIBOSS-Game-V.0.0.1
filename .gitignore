@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+>>>>>>> a5e5965b3dc6c600228887e33870c377edf38336
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
