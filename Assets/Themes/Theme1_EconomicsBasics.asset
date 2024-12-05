@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d7d58057c53cd44a21d98ee12d3489, type: 3}
+  m_Name: Theme1_EconomicsBasics
+  m_EditorClassIdentifier: 
+  themeName: "Economia e Finan\xE7as B\xE1sica"
+  questions:
+  - questionText: "Pergunta: \"Qual desses h\xE1bitos ajuda a economizar dinheiro
+      no supermercado?\""
+    options:
+    - Fazer uma lista de compras.
+    - Comprar produtos por impulso.
+    - Ir ao mercado com fome.
+    - "Comprar sem comparar pre\xE7os."
+    correctOptionIndex: 0
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"[BLANK] \xE9 o dinheiro que sobra ap\xF3s pagar todas
+      as despesas mensais.\""
+    options:
+    - "Poupan\xE7a"
+    - "Sal\xE1rio L\xEDquido"
+    - "Renda Dispon\xEDvel"
+    correctOptionIndex: 2
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"Parcelar uma compra no cart\xE3o de cr\xE9dito
+      nunca gera juros.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 1
+    type: 1
+    correctMatches: []
+  - questionText: "Tarefa: Arraste os itens para suas respectivas categorias: Essenciais
+      ou Sup\xE9rfluos."
+    options:
+    - Essenciais
+    - "Sup\xE9rfluos"
+    correctOptionIndex: -1
+    type: 3
+    correctMatches:
+    - 'Essenciais: Aluguel'
+    - "Sup\xE9rfluos: Cinema"
+    - "Sup\xE9rfluos: Streaming"
+    - 'Essenciais: Transporte'
+    - "Essenciais: Alimenta\xE7\xE3o"
+  - questionText: "Pergunta: \"Qual \xE9 o principal motivo para se evitar o uso
+      do cheque especial?\""
+    options:
+    - "Os juros s\xE3o muito altos."
+    - "\xC9 um tipo de poupan\xE7a."
+    - "N\xE3o tem limites para uso."
+    - "\xC9 para ocasi\xF5es especiais."
+    correctOptionIndex: 0
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"O sal\xE1rio m\xEDnimo atual no Brasil (2024) \xE9 de
+      R$ [BLANK].\""
+    options:
+    - R$ 1238,00
+    - R$ 1320,00
+    - R$ 1412,00
+    correctOptionIndex: 2
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"Pagar contas em atraso pode gerar multas e
+      juros adicionais.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 0
+    type: 1
+    correctMatches: []
+  - questionText: "Pergunta: \"Qual \xE9 o primeiro passo para come\xE7ar a organizar
+      suas finan\xE7as?\""
+    options:
+    - "Fazer um empr\xE9stimo."
+    - "Investir em a\xE7\xF5es."
+    - Registrar todos os gastos.
+    - "Pagar tudo \xE0 vista."
+    correctOptionIndex: 2
+    type: 0
+    correctMatches: []
+  - questionText: "Tarefa: Combine os conceitos com suas defini\xE7\xF5es:"
+    options:
+    - Juros Compostos
+    - "D\xEDvida"
+    - "Or\xE7amento"
+    correctOptionIndex: 0
+    type: 3
+    correctMatches:
+    - 'Juros Compostos: Juros sobre juros'
+    - "D\xEDvida: O valor devido a terceiros"
+    - "Or\xE7amento: Planejamento das receitas e despesas"
+  - questionText: "Frase: \"Economizar \xE9 uma maneira de se preparar para [BLANK]
+      imprevistos.\"Frase: \"Economizar \xE9 uma maneira de se preparar para _______
+      imprevistos.\""
+    options:
+    - Evitar
+    - Resolver
+    - Antecipar
+    correctOptionIndex: 1
+    type: 2
+    correctMatches: []

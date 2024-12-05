@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d7d58057c53cd44a21d98ee12d3489, type: 3}
+  m_Name: Theme2_HouseholdBudget
+  m_EditorClassIdentifier: 
+  themeName: "Economia Dom\xE9stica"
+  questions:
+  - questionText: "Pergunta: \"O que \xE9 considerado um gasto fixo no or\xE7amento
+      dom\xE9stico?\""
+    options:
+    - Luz
+    - Lazer
+    - Aluguel
+    - Lanches
+    correctOptionIndex: 2
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"O valor ideal para poupar \xE9 de pelo menos [BLANK]%
+      da renda mensal.\""
+    options:
+    - 10
+    - 20
+    - 30
+    correctOptionIndex: 1
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"\xC9 uma boa pr\xE1tica usar o cart\xE3o de
+      cr\xE9dito para cobrir gastos essenciais quando o sal\xE1rio acaba.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 1
+    type: 1
+    correctMatches: []
+  - questionText: 'Tarefa: Classifique os itens como Receita ou Despesa.'
+    options:
+    - "Sal\xE1rio"
+    - Aluguel
+    - Luz
+    - Freela
+    - Transporte
+    correctOptionIndex: 0
+    type: 3
+    correctMatches:
+    - Receita
+    - Despesa
+  - questionText: "Pergunta: \"Qual desses pode ser considerado um gasto vari\xE1vel?\""
+    options:
+    - Aluguel
+    - "Contas de \xE1gua e luz"
+    - Cinema
+    - Compras
+    correctOptionIndex: 1
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"Um or\xE7amento deve incluir todos os [BLANK].\""
+    options:
+    - Rendimentos e Custos fixos
+    - "Pre\xE7os e Quantidades"
+    - "Nomes e Descri\xE7\xF5es"
+    correctOptionIndex: 0
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"A melhor forma de equilibrar o or\xE7amento
+      \xE9 eliminar os gastos fixos.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 1
+    type: 1
+    correctMatches: []
+  - questionText: "Pergunta: \"Se o aluguel custa R$ 1.200 e a renda \xE9 R$ 3.000,
+      qual \xE9 o percentual destinado a esse gasto?\""
+    options:
+    - 40
+    - 30
+    - 50
+    - 20
+    correctOptionIndex: 0
+    type: 0
+    correctMatches: []
+  - questionText: "Tarefa: Organize as despesas em ordem de prioridade: Essenciais,
+      Importantes, Sup\xE9rfluos."
+    options:
+    - Aluguel
+    - Lazer
+    - Transporte
+    correctOptionIndex: 0
+    type: 0
+    correctMatches:
+    - Essenciais
+    - Importantes
+    - "Sup\xE9rfluos"
+  - questionText: "Frase: \"\xC9 importante incluir uma reserva de emerg\xEAncia
+      no [BLANK] dom\xE9stico.\""
+    options:
+    - Planejamento
+    - Corte
+    - Extras
+    correctOptionIndex: 0
+    type: 2
+    correctMatches: []

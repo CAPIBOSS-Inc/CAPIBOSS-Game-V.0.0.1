@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d7d58057c53cd44a21d98ee12d3489, type: 3}
+  m_Name: Theme3_FinancialBasicsIntroduction
+  m_EditorClassIdentifier: 
+  themeName: 
+  questions:
+  - questionText: "Pergunta: \"Por que \xE9 importante falar sobre dinheiro desde
+      cedo?\""
+    options:
+    - "Para criar bons h\xE1bitos"
+    - "Para ficar rico r\xE1pido"
+    - "Para evitar d\xEDvidas"
+    - "N\xE3o \xE9 importante"
+    correctOptionIndex: 0
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"Educa\xE7\xE3o financeira \xE9 sobre aprender a usar
+      o _______ de forma consciente.\""
+    options:
+    - Tempo
+    - Pix
+    - Dinheiro
+    correctOptionIndex: 2
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"Dinheiro \xE9 apenas para adultos.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 1
+    type: 1
+    correctMatches: []
+  - questionText: 'Tarefa: Associe os conceitos: Economizar, Investir, Gastar.'
+    options:
+    - Guardar para o futuro
+    - Aplicar para crescer
+    - Utilizar para necessidades
+    correctOptionIndex: -1
+    type: 3
+    correctMatches:
+    - Economizar
+    - Investir
+    - Gastar
+  - questionText: "Pergunta: \"Qual h\xE1bito ajuda na educa\xE7\xE3o financeira
+      desde cedo?\""
+    options:
+    - Poupar moedas
+    - Gastar tudo de uma vez
+    - Pedir emprestado
+    - Pedir para os pais
+    correctOptionIndex: 0
+    type: 0
+    correctMatches: []
+  - questionText: "Frase: \"O primeiro passo da educa\xE7\xE3o financeira \xE9 entender
+      quanto voc\xEA _______.\""
+    options:
+    - Tem
+    - Gasta
+    - Economiza
+    correctOptionIndex: 1
+    type: 2
+    correctMatches: []
+  - questionText: "Afirma\xE7\xE3o: \"Ter uma mesada pode ajudar a aprender a gerenciar
+      dinheiro.\""
+    options:
+    - Verdadeiro
+    - Falso
+    correctOptionIndex: 0
+    type: 1
+    correctMatches: []
+  - questionText: "Pergunta: \"Qual \xE9 um exemplo de investimento simples?\""
+    options:
+    - "D\xEDvidas"
+    - Emprestar Dinheiro
+    - "Poupan\xE7a"
+    - "Cart\xE3o de Cr\xE9dito"
+    correctOptionIndex: 2
+    type: 0
+    correctMatches: []
+  - questionText: "Tarefa: Organize as etapas da educa\xE7\xE3o financeira: Ganhar,
+      Planejar, Economizar.Tarefa: Organize as etapas da educa\xE7\xE3o financeira:
+      Ganhar, Planejar, Economizar."
+    options:
+    - Gastar
+    - Planejar
+    - Economizar
+    correctOptionIndex: 0
+    type: 3
+    correctMatches:
+    - "Inst\xE1vel"
+    - Seguro
+    - Complicado
+  - questionText: "Frase: \"A educa\xE7\xE3o financeira ajuda a construir um futuro
+      _______.\""
+    options:
+    - "Inst\xE1vel"
+    - Seguro
+    - Complicado
+    correctOptionIndex: 1
+    type: 2
+    correctMatches: []
