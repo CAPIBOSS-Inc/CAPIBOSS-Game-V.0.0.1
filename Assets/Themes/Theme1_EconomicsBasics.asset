@@ -14,8 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeName: "Economia e Finan\xE7as B\xE1sica"
   questions:
+  - questionText: 'Complete a Frase:'
+    fillInTheBlankText: "[BLANK] \xE9 o dinheiro que sobra ap\xF3s pagar todas as
+      despesas mensais."
+    options:
+    - "Poupan\xE7a"
+    - "Sal\xE1rio L\xEDquido"
+    - "Renda Dispon\xEDvel"
+    correctOptionIndex: 2
+    type: 2
+    correctMatches: []
+    inputFieldPrefab: {fileID: 918024135468323410, guid: f9ff3fd78c2089c4a8ab91bf13bab5d2, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Pergunta: \"Qual desses h\xE1bitos ajuda a economizar dinheiro
       no supermercado?\""
+    fillInTheBlankText: 
     options:
     - Fazer uma lista de compras.
     - Comprar produtos por impulso.
@@ -24,25 +37,22 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 0
     correctMatches: []
-  - questionText: "Frase: \"[BLANK] \xE9 o dinheiro que sobra ap\xF3s pagar todas
-      as despesas mensais.\""
-    options:
-    - "Poupan\xE7a"
-    - "Sal\xE1rio L\xEDquido"
-    - "Renda Dispon\xEDvel"
-    correctOptionIndex: 2
-    type: 2
-    correctMatches: []
+    inputFieldPrefab: {fileID: 8146562787020862087, guid: ff34848c901633c41b8c853bd3eaf3e1, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"Parcelar uma compra no cart\xE3o de cr\xE9dito
       nunca gera juros.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 1
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Tarefa: Arraste os itens para suas respectivas categorias: Essenciais
       ou Sup\xE9rfluos."
+    fillInTheBlankText: 
     options:
     - Essenciais
     - "Sup\xE9rfluos"
@@ -54,8 +64,11 @@ MonoBehaviour:
     - "Sup\xE9rfluos: Streaming"
     - 'Essenciais: Transporte'
     - "Essenciais: Alimenta\xE7\xE3o"
+    inputFieldPrefab: {fileID: 8146562787020862087, guid: ff34848c901633c41b8c853bd3eaf3e1, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Pergunta: \"Qual \xE9 o principal motivo para se evitar o uso
       do cheque especial?\""
+    fillInTheBlankText: 
     options:
     - "Os juros s\xE3o muito altos."
     - "\xC9 um tipo de poupan\xE7a."
@@ -64,7 +77,10 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 0
     correctMatches: []
-  - questionText: "Frase: \"O sal\xE1rio m\xEDnimo atual no Brasil (2024) \xE9 de
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
+  - questionText: 'Complete a Frase: '
+    fillInTheBlankText: "\"O sal\xE1rio m\xEDnimo atual no Brasil (2024) \xE9 de
       R$ [BLANK].\""
     options:
     - R$ 1238,00
@@ -73,16 +89,22 @@ MonoBehaviour:
     correctOptionIndex: 2
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 918024135468323410, guid: f9ff3fd78c2089c4a8ab91bf13bab5d2, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"Pagar contas em atraso pode gerar multas e
       juros adicionais.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 0
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Pergunta: \"Qual \xE9 o primeiro passo para come\xE7ar a organizar
       suas finan\xE7as?\""
+    fillInTheBlankText: 
     options:
     - "Fazer um empr\xE9stimo."
     - "Investir em a\xE7\xF5es."
@@ -91,7 +113,10 @@ MonoBehaviour:
     correctOptionIndex: 2
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Tarefa: Combine os conceitos com suas defini\xE7\xF5es:"
+    fillInTheBlankText: 
     options:
     - Juros Compostos
     - "D\xEDvida"
@@ -102,8 +127,10 @@ MonoBehaviour:
     - 'Juros Compostos: Juros sobre juros'
     - "D\xEDvida: O valor devido a terceiros"
     - "Or\xE7amento: Planejamento das receitas e despesas"
-  - questionText: "Frase: \"Economizar \xE9 uma maneira de se preparar para [BLANK]
-      imprevistos.\"Frase: \"Economizar \xE9 uma maneira de se preparar para _______
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
+  - questionText: 'Complete a Frase: '
+    fillInTheBlankText: "\"Economizar \xE9 uma maneira de se preparar para [BLANK]
       imprevistos.\""
     options:
     - Evitar
@@ -112,3 +139,5 @@ MonoBehaviour:
     correctOptionIndex: 1
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 918024135468323410, guid: f9ff3fd78c2089c4a8ab91bf13bab5d2, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}

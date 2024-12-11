@@ -16,6 +16,7 @@ MonoBehaviour:
   questions:
   - questionText: "Pergunta: \"O que \xE9 considerado um gasto fixo no or\xE7amento
       dom\xE9stico?\""
+    fillInTheBlankText: 
     options:
     - Luz
     - Lazer
@@ -24,8 +25,11 @@ MonoBehaviour:
     correctOptionIndex: 2
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Frase: \"O valor ideal para poupar \xE9 de pelo menos [BLANK]%
       da renda mensal.\""
+    fillInTheBlankText: 
     options:
     - 10
     - 20
@@ -33,15 +37,21 @@ MonoBehaviour:
     correctOptionIndex: 1
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 8146562787020862087, guid: ff34848c901633c41b8c853bd3eaf3e1, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"\xC9 uma boa pr\xE1tica usar o cart\xE3o de
       cr\xE9dito para cobrir gastos essenciais quando o sal\xE1rio acaba.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 1
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: 'Tarefa: Classifique os itens como Receita ou Despesa.'
+    fillInTheBlankText: 
     options:
     - "Sal\xE1rio"
     - Aluguel
@@ -53,7 +63,10 @@ MonoBehaviour:
     correctMatches:
     - Receita
     - Despesa
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Pergunta: \"Qual desses pode ser considerado um gasto vari\xE1vel?\""
+    fillInTheBlankText: 
     options:
     - Aluguel
     - "Contas de \xE1gua e luz"
@@ -62,7 +75,10 @@ MonoBehaviour:
     correctOptionIndex: 1
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Frase: \"Um or\xE7amento deve incluir todos os [BLANK].\""
+    fillInTheBlankText: 
     options:
     - Rendimentos e Custos fixos
     - "Pre\xE7os e Quantidades"
@@ -70,16 +86,22 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"A melhor forma de equilibrar o or\xE7amento
       \xE9 eliminar os gastos fixos.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 1
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Pergunta: \"Se o aluguel custa R$ 1.200 e a renda \xE9 R$ 3.000,
       qual \xE9 o percentual destinado a esse gasto?\""
+    fillInTheBlankText: 
     options:
     - 40
     - 30
@@ -88,8 +110,11 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Tarefa: Organize as despesas em ordem de prioridade: Essenciais,
       Importantes, Sup\xE9rfluos."
+    fillInTheBlankText: 
     options:
     - Aluguel
     - Lazer
@@ -100,8 +125,11 @@ MonoBehaviour:
     - Essenciais
     - Importantes
     - "Sup\xE9rfluos"
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Frase: \"\xC9 importante incluir uma reserva de emerg\xEAncia
       no [BLANK] dom\xE9stico.\""
+    fillInTheBlankText: 
     options:
     - Planejamento
     - Corte
@@ -109,3 +137,5 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}

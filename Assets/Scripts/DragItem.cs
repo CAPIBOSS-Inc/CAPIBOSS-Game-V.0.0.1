@@ -4,53 +4,52 @@ using TMPro;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    [SerializeField] private TextMeshProUGUI text;  // Referência ao texto exibido no item
-    private CanvasGroup canvasGroup;               // Usado para controlar a visibilidade durante o arraste
-    private RectTransform rectTransform;           // Transformação do item
-    private Transform originalParent;              // Parent original para restaurar se necessário
-    private string itemText;                       // Texto associado ao item
-    private DragAndDropManager dragManager;        // Referência ao gerenciador de Drag and Drop
-
-    /// <summary>
-    /// Inicializa o item com texto e uma referência ao gerenciador de Drag and Drop.
-    /// </summary>
-    public void Initialize(string text, DragAndDropManager manager)
-    {
-        this.itemText = text;
-        this.dragManager = manager;
-        if (this.text != null)
-            this.text.text = text;
-    }
+    private CanvasGroup canvasGroup; // Usado para controlar a visibilidade durante o arraste
+    private RectTransform rectTransform; // Transformação do item
+    private Transform originalParent; // Parent original para restaurar se necessário
+    private bool isDragging; // Indica se o item está sendo arrastado
 
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        originalParent = transform.parent;
+        rectTransform = GetComponent<RectTransform>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = false;  // Permite que o item seja ignorado por objetos abaixo
-        originalParent = transform.parent;  // Salva o parent atual
-        transform.SetParent(dragManager.transform);  // Move o item para o topo na hierarquia visual
+        Debug.Log("Iniciando arraste");
+        isDragging = true; // Marca que o arraste começou
+        originalParent = transform.parent; // Salva o parent atual
+        transform.SetParent(transform.root); // Move o item para o nível superior na hierarquia visual
+        canvasGroup.blocksRaycasts = false; // Desativa o bloqueio de raycasts para permitir que o item seja arrastado
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / dragManager.GetComponentInParent<Canvas>().scaleFactor;
+        Debug.Log("Arrastando");
+        if (isDragging)
+        {
+            Vector2 localPoint;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                (RectTransform)transform.parent, 
+                eventData.position, 
+                eventData.pressEventCamera, 
+                out localPoint);
+            rectTransform.anchoredPosition = localPoint; // Atualiza a posição do objeto arrastável
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.blocksRaycasts = true;
+        Debug.Log("Finalizando arraste");
+        isDragging = false; // Marca que o arraste terminou
+        canvasGroup.blocksRaycasts = true; // Restaura a capacidade de receber cliques
 
-        // Verifica se o item foi solto em um alvo válido
-        if (eventData.pointerEnter != null && eventData.pointerEnter.CompareTag("DropTarget"))
+        // Verifica se o objeto foi solto em um espaço válido
+        if (eventData.pointerEnter != null)
         {
-            // Move para o novo parent e registra o match no DragAndDropManager
-            transform.SetParent(eventData.pointerEnter.transform);
-            dragManager.AddPlayerMatch(itemText);
+            // Aqui você pode adicionar lógica para verificar se o objeto foi solto em um slot ou área válida
+            // Por exemplo, se você tiver um slot, você pode verificar se o slot aceita o item
         }
         else
         {

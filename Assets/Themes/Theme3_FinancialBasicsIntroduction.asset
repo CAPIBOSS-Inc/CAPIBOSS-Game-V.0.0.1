@@ -16,6 +16,7 @@ MonoBehaviour:
   questions:
   - questionText: "Pergunta: \"Por que \xE9 importante falar sobre dinheiro desde
       cedo?\""
+    fillInTheBlankText: 
     options:
     - "Para criar bons h\xE1bitos"
     - "Para ficar rico r\xE1pido"
@@ -24,8 +25,11 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Frase: \"Educa\xE7\xE3o financeira \xE9 sobre aprender a usar
       o _______ de forma consciente.\""
+    fillInTheBlankText: 
     options:
     - Tempo
     - Pix
@@ -33,14 +37,20 @@ MonoBehaviour:
     correctOptionIndex: 2
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 8146562787020862087, guid: ff34848c901633c41b8c853bd3eaf3e1, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"Dinheiro \xE9 apenas para adultos.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 1
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: 'Tarefa: Associe os conceitos: Economizar, Investir, Gastar.'
+    fillInTheBlankText: 
     options:
     - Guardar para o futuro
     - Aplicar para crescer
@@ -51,8 +61,11 @@ MonoBehaviour:
     - Economizar
     - Investir
     - Gastar
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Pergunta: \"Qual h\xE1bito ajuda na educa\xE7\xE3o financeira
       desde cedo?\""
+    fillInTheBlankText: 
     options:
     - Poupar moedas
     - Gastar tudo de uma vez
@@ -61,8 +74,11 @@ MonoBehaviour:
     correctOptionIndex: 0
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Frase: \"O primeiro passo da educa\xE7\xE3o financeira \xE9 entender
       quanto voc\xEA _______.\""
+    fillInTheBlankText: 
     options:
     - Tem
     - Gasta
@@ -70,15 +86,21 @@ MonoBehaviour:
     correctOptionIndex: 1
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}
   - questionText: "Afirma\xE7\xE3o: \"Ter uma mesada pode ajudar a aprender a gerenciar
       dinheiro.\""
+    fillInTheBlankText: 
     options:
     - Verdadeiro
     - Falso
     correctOptionIndex: 0
     type: 1
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Pergunta: \"Qual \xE9 um exemplo de investimento simples?\""
+    fillInTheBlankText: 
     options:
     - "D\xEDvidas"
     - Emprestar Dinheiro
@@ -87,9 +109,12 @@ MonoBehaviour:
     correctOptionIndex: 2
     type: 0
     correctMatches: []
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Tarefa: Organize as etapas da educa\xE7\xE3o financeira: Ganhar,
       Planejar, Economizar.Tarefa: Organize as etapas da educa\xE7\xE3o financeira:
       Ganhar, Planejar, Economizar."
+    fillInTheBlankText: 
     options:
     - Gastar
     - Planejar
@@ -100,8 +125,11 @@ MonoBehaviour:
     - "Inst\xE1vel"
     - Seguro
     - Complicado
+    inputFieldPrefab: {fileID: 0}
+    draggablePrefab: {fileID: 0}
   - questionText: "Frase: \"A educa\xE7\xE3o financeira ajuda a construir um futuro
       _______.\""
+    fillInTheBlankText: 
     options:
     - "Inst\xE1vel"
     - Seguro
@@ -109,3 +137,5 @@ MonoBehaviour:
     correctOptionIndex: 1
     type: 2
     correctMatches: []
+    inputFieldPrefab: {fileID: 2576952197018218709, guid: 4b4d53aa6146e74448aaf8c7a62bdf12, type: 3}
+    draggablePrefab: {fileID: 4286328889559322572, guid: 583defb272e8ca34c991d9f1741fdc7e, type: 3}

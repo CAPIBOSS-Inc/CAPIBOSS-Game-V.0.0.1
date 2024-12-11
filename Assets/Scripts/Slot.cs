@@ -43,6 +43,11 @@ public class Slot : MonoBehaviour, IDropHandler
         return true;
     }
 
+    public bool ValidateWord(string word)
+    {
+        return word == CorrectWordOrPhrase;
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
         throw new System.NotImplementedException();

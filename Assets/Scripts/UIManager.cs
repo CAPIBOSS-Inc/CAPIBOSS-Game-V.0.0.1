@@ -21,9 +21,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button[] trueFalseButtons; // Botões de verdadeiro ou falso
 
     [Header("Preencher a Lacuna")]
-    [SerializeField] private TMP_InputField fillInTheBlankField;    // Campo de entrada para preencher a lacuna
+    [SerializeField] private TextMeshProUGUI questionFillInTheBlank;
     [SerializeField] private Transform fillInTheBlankPanelContainer; // Container para elementos da lacuna
-    [SerializeField] private GameObject draggablePrefab;            // Prefab para palavras arrastáveis (lacuna)
+    [SerializeField] private Transform fillInTheBlankQuestionContainer;
 
     [Header("Arrastar e Soltar")]
     [SerializeField] private Transform dragAndDropPanelContainer; // Container principal do painel de arrastar e soltar
@@ -44,6 +44,20 @@ public class UIManager : MonoBehaviour
     private int currentQuestionIndex;    // Índice da pergunta atual
     private Coroutine feedbackCoroutine; // Gerencia o feedback
     private string correctAnswer;        // Resposta correta
+    private string options;
+
+    private void Start()
+    {
+        // Certifique-se que questionText não é nulo
+        if (questionText == null)
+        {
+            Debug.LogError("questionText is null. Please check the Inspector.");
+            return;
+        }
+
+        // Atribuir o texto inicial
+        questionText.text = "Texto inicial da pergunta";
+    }
 
     public void LoadThemeQuestions(Theme theme)
     {
@@ -53,8 +67,10 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+
         themesSelectionCanvas.SetActive(false); // Oculta o canvas de seleção de temas
         gameplayCanvas.SetActive(true);        // Ativa o canvas de gameplay
+        questionText.gameObject.SetActive(true);
         currentQuestions = theme.questions;    // Carrega as perguntas
         currentQuestionIndex = 0;              // Reseta o índice
         ShowQuestion();
@@ -115,18 +131,88 @@ public class UIManager : MonoBehaviour
     private void ShowTrueFalse(Question question)
     {
         trueFalsePanel.SetActive(true);
+
+        // Define os textos dos botões
         trueFalseButtons[0].GetComponentInChildren<TextMeshProUGUI>().text = "Verdadeiro";
         trueFalseButtons[1].GetComponentInChildren<TextMeshProUGUI>().text = "Falso";
+
+        // Adiciona os listeners de clique para os botões
+        for (int i = 0; i < trueFalseButtons.Length; i++)
+        {
+            trueFalseButtons[i].onClick.RemoveAllListeners(); // Remove listeners antigos
+            int index = i; // Captura o índice do botão
+            trueFalseButtons[i].onClick.AddListener(() => OnTrueFalseSelected(index, question));
+        }
     }
 
     private void ShowFillInTheBlank(Question question)
     {
         fillInTheBlankPanel.SetActive(true);
 
+        // 1. Defina o texto da pergunta
+        string fillInTheBlankQuestionText = question.FillInTheBlankText;
+
+        if (string.IsNullOrEmpty(fillInTheBlankQuestionText))
+        {
+            Debug.LogError("Campo de perguntas vazio. Verifique a lógica.");
+            return;
+        }
+
+        // 2. Substituir o marcador [BLANK] por uma tag `<link>`
+        string formattedText = fillInTheBlankQuestionText.Replace("[BLANK]", "<link=\"InputField\">______</link>");
+        questionFillInTheBlank.text = formattedText;
+
+        // 3. Habilitar suporte ao RichText
+        questionFillInTheBlank.richText = true;
+
+        // 4. Atualizar a renderização do texto
+        questionFillInTheBlank.ForceMeshUpdate();
+
+        // 5. Localizar a posição do marcador no texto
+        TMP_TextInfo textInfo = questionFillInTheBlank.textInfo;
+        int linkIndex = questionFillInTheBlank.text.IndexOf("<link=\"InputField\">");
+
+        if (linkIndex == -1)
+        {
+            Debug.LogError("Marcador [BLANK] não encontrado no texto formatado.");
+            return;
+        }
+
+        TMP_CharacterInfo firstChar = textInfo.characterInfo[linkIndex];
+
+        // 6. Ajustar dimensões para corresponder ao espaço do marcador
+        float widthBeforeBlank = firstChar.topRight.x - firstChar.bottomLeft.x;
+
+        // 7. Limpa o container de palavras arrastáveis
+        foreach (Transform child in fillInTheBlankPanelContainer)
+        {
+            if (child.CompareTag("DraggableWord")) // Se você tiver palavras arrastáveis
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+        // 8. Cria as DraggableWords
         foreach (string option in question.Options)
         {
-            GameObject draggable = Instantiate(draggablePrefab, fillInTheBlankPanelContainer);
-            draggable.GetComponent<DraggableWord>().Initialize(option, fillInTheBlankField.transform, true);
+            GameObject draggableWordObject = Instantiate(draggableWordPrefab, fillInTheBlankPanelContainer);
+            DraggableWord draggableWord = draggableWordObject.GetComponent<DraggableWord>();
+
+            if (draggableWord == null)
+            {
+                Debug.LogError("DraggableWord component is missing on the DraggableWord prefab.");
+                return;
+            }
+
+            // Inicializa a DraggableWord com o texto da opção
+            draggableWord.Initialize(option, null, true); // O segundo parâmetro pode ser ajustado conforme necessário
+
+            // RectTransform draggableWordRectTransform = draggableWordObject.GetComponent<RectTransform>();
+            // Vector3 worldPosition = questionFillInTheBlank.transform.TransformPoint(firstChar.bottomLeft);
+            // draggableWordRectTransform.position = worldPosition;
+
+            // // 10. Ajustar a largura da DraggableWord para corresponder ao espaço do marcador
+            // draggableWordRectTransform.sizeDelta = new Vector2(widthBeforeBlank, draggableWordRectTransform.sizeDelta.y);
         }
     }
 
@@ -198,6 +284,26 @@ public class UIManager : MonoBehaviour
         }
 
         // Chama a função para ir para a próxima pergunta
+        NextQuestion();
+    }
+
+    private void OnTrueFalseSelected(int selectedIndex, Question question)
+    {
+        // Define 0 como "Verdadeiro" e 1 como "Falso"
+        bool isCorrect = (selectedIndex == question.CorrectOptionIndex);
+
+        if (isCorrect)
+        {
+            Debug.Log("Resposta correta!");
+            scoreManager.AddCorrectAnswer();
+        }
+        else
+        {
+            Debug.Log("Resposta errada.");
+            scoreManager.AddIncorrectAnswer();
+        }
+
+        // Chama a próxima pergunta
         NextQuestion();
     }
 
@@ -276,5 +382,34 @@ public class UIManager : MonoBehaviour
         }
         return true; // Todos os slots preenchidos
     }
+
+    private void CopyTextSettings(TextMeshProUGUI source, TextMeshProUGUI target)
+{
+    if (source == null || target == null)
+    {
+        Debug.LogError("Source ou Target está nulo na função CopyTextSettings.");
+        return;
+    }
+
+    // Copia as propriedades principais
+    target.font = source.font;
+    target.fontSize = source.fontSize;
+    target.color = source.color;
+    target.alignment = source.alignment;
+    target.textWrappingMode = source.textWrappingMode;
+    target.overflowMode = source.overflowMode;
+
+    // Copia margens e espaçamentos, se necessário
+    target.margin = source.margin;
+    target.characterSpacing = source.characterSpacing;
+    target.wordSpacing = source.wordSpacing;
+    target.lineSpacing = source.lineSpacing;
+    target.paragraphSpacing = source.paragraphSpacing;
+
+    // Habilite/Desabilite efeitos, como sublinhado, itálico, negrito
+    target.fontStyle = source.fontStyle;
+
+    // Se precisar copiar mais configurações, adicione aqui
+}
 }
 
